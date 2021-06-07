@@ -176,13 +176,12 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductA
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_product -> {
-                var intent=Intent(this,AddProductActivity::class.java)
-                startActivity(intent)
+                navigator.startActivity(AddProductActivity::class.java,true)
+
                 Toast.makeText(this, "Add Product", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_store -> {
-                var intent=Intent(this,AddStoreActivity::class.java)
-                startActivity(intent)
+                navigator.startActivity(AddStoreActivity::class.java,true)
                 Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_change_language -> {
