@@ -41,6 +41,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
+                app:layout_constraintBottom_toTopOf="@id/cv_add_product"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -63,7 +64,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/convergence"
                     android:gravity="center"
-                    android:text="Add Product"
+                    android:text="Add Your Product"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -92,6 +93,7 @@
                 android:textColor="@color/white"
                 android:textSize="18sp"
                 android:textStyle="bold"
+                android:visibility="gone"
                 app:layout_constraintBottom_toTopOf="@id/cv_add_product"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
@@ -102,15 +104,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="30dp"
                 android:layout_marginEnd="14dp"
                 android:layout_marginBottom="30dp"
                 app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="10dp"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/label_add_product">
+                app:layout_constraintTop_toBottomOf="@id/cl_toolbar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/cl_box_layout"
@@ -220,9 +221,9 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
-                            android:layout_marginBottom="10dp"
-                            android:layout_marginTop="10dp"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="10dp">
 
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/till_product_rate"
@@ -284,9 +285,9 @@
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
-                            android:layout_marginBottom="5dp"
-                            android:layout_height="wrap_content">
+                            android:layout_marginBottom="5dp">
 
                             <TextView
                                 android:id="@+id/label_upload"
@@ -322,15 +323,15 @@
                             android:id="@+id/cl_uploaded_pic"
                             android:layout_width="match_parent"
                             android:layout_height="120dp"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <ImageView
                                 android:id="@+id/img_pic_1"
                                 android:layout_width="0dp"
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="10dp"
-                                android:layout_marginEnd="10dp"
                                 android:layout_marginTop="5dp"
+                                android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="5dp"
                                 android:background="@drawable/ic_camera"
                                 app:layout_constraintBottom_toBottomOf="parent"
@@ -345,8 +346,8 @@
                                 android:layout_height="match_parent"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="5dp"
-                                android:layout_marginBottom="5dp"
                                 android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="5dp"
 
                                 android:background="@drawable/ic_camera"
                                 app:layout_constraintBottom_toBottomOf="parent"
