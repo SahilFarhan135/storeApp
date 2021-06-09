@@ -27,6 +27,7 @@ class SplashActitvity : BaseActivity<ActivitySplashBinding, SplashViewModel>() {
         binding.tvSplashLabel.text = "Trivia App"
         Handler().postDelayed({
             navigator.startActivity(LoginActivity::class.java, true)
+            finish()
         }, 2000)
     }
 

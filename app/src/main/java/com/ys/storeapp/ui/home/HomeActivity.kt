@@ -1,7 +1,6 @@
 package com.ys.storeapp.ui.home
 
 import android.app.Dialog
-import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
@@ -17,14 +16,14 @@ import com.ys.storeapp.injection.component.AppComponent
 import com.ys.storeapp.ui.account.AccountActivity
 import com.ys.storeapp.ui.add_store.AddStoreActivity
 import com.ys.storeapp.ui.addproduct.AddProductActivity
-import com.ys.storeapp.ui.addproduct.AddProductViewModel
 import com.ys.storeapp.ui.home.adpaters.CategoryAdapter
 import com.ys.storeapp.ui.home.adpaters.ProductApadter
 import com.ys.storeapp.ui.home.model.CategoryModel
 import com.ys.storeapp.ui.home.model.ProductItem
 
 
-class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductApadter.OnProductMenuClick, NavigationView.OnNavigationItemSelectedListener {
+class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
+    ProductApadter.OnProductMenuClick, NavigationView.OnNavigationItemSelectedListener {
 
 
     private lateinit var categoryList: ArrayList<CategoryModel>
@@ -48,18 +47,17 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductA
     private fun initui() {
         categoryList = ArrayList()
         allItemList = ArrayList()
-        intializeRvShop()
-        intializeRvAllItems()
+        getAllShops()
+        getAllProduct()
         binding.navView.setNavigationItemSelectedListener(this)
     }
 
 
-
     private fun clickListener() {
         binding.activityMainDr.btDrawer.setOnClickListener {
-            if(binding.drawerLayout.isDrawerVisible(GravityCompat.START)){
+            if (binding.drawerLayout.isDrawerVisible(GravityCompat.START)) {
                 binding.drawerLayout.openDrawer(GravityCompat.END)
-            }else{
+            } else {
                 binding.drawerLayout.openDrawer(GravityCompat.START)
             }
             animateNavigationDrawer()
@@ -98,10 +96,11 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductA
         allItemList.add(ProductItem("Nike Super Light", "500", R.drawable.demo_shoe))
         val adapter1 = ProductApadter()
         adapter1.ProductApadterCallBack(this)
-        binding.activityMainDr.rvMyProduct.adapter=adapter1
+        binding.activityMainDr.rvMyProduct.adapter = adapter1
         binding.activityMainDr.rvMyProduct.setLayoutManager(GridLayoutManager(this, 2))
         (binding.activityMainDr.rvMyProduct.adapter as ProductApadter).submitList(allItemList)
     }
+
     private fun animateNavigationDrawer() {
         binding.drawerLayout.addDrawerListener(object : SimpleDrawerListener() {
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
@@ -115,73 +114,78 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductA
         showToast(productItem.toString() + "position  $position")
         openMenuDialog(productItem, position)
     }
+
     fun openMenuDialog(productItem: ProductItem, position: Int) {
         val dialog = Dialog(this)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         val binding: DilaogMenuBinding = DilaogMenuBinding.inflate(LayoutInflater.from(this))
         dialog.setContentView(binding.getRoot())
-        dialog.window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        dialog.window!!.setLayout(
+            ViewGroup.LayoutParams.MATCH_PARENT,
+            ViewGroup.LayoutParams.WRAP_CONTENT
+        )
         dialog.setCancelable(true)
         dialog.show()
-        var click=true
-        with(binding){
-            clRename.setOnClickListener{
-                if(click){
-                    clRenameLayout.visibility=View.VISIBLE
-                    clChangePriceLayout.visibility=View.GONE
-                    click=false
-                }else{
-                    clRenameLayout.visibility=View.GONE
-                    clChangePriceLayout.visibility=View.GONE
-                    click=true
+        var click = true
+        var click2 = true
+        with(binding) {
+            clRename.setOnClickListener {
+                if (click) {
+                    clRenameLayout.visibility = View.VISIBLE
+                    clChangePriceLayout.visibility = View.GONE
+                    click = false
+                } else {
+                    clRenameLayout.visibility = View.GONE
+                    clChangePriceLayout.visibility = View.GONE
+                    click = true
                 }
 
             }
             tvBtRename.setOnClickListener {
-                if(etRename.text.isNullOrBlank()){
+                if (etRename.text.isNullOrBlank()) {
                     showToast("Name filed cannot be empty")
-                }else{
-                    showToast("Your Product name has been changed to ${etRename.text.toString().trim()}")
+                } else {
+                    renameProduct(etRename.text.toString())
                 }
             }
             tvBtPriceChange.setOnClickListener {
-                if(etChangePrice.text.isNullOrBlank()){
+                if (etChangePrice.text.isNullOrBlank()) {
                     showToast("Price filed cannot be empty")
-                }else{
-                    showToast("Your price has been updated to ${etChangePrice.text.toString().trim()}")
+                } else {
+                    updatePrice(etChangePrice.text.toString())
                 }
             }
             clPrice.setOnClickListener {
-
-                if(click){
-                    clRenameLayout.visibility=View.GONE
-                    clChangePriceLayout.visibility=View.VISIBLE
-                    click=false
-                }else{
-                    clRenameLayout.visibility=View.GONE
-                    clChangePriceLayout.visibility=View.GONE
-                    click=true
+                if (click2) {
+                    clRenameLayout.visibility = View.GONE
+                    clChangePriceLayout.visibility = View.VISIBLE
+                    click2 = false
+                } else {
+                    clRenameLayout.visibility = View.GONE
+                    clChangePriceLayout.visibility = View.GONE
+                    click2 = true
                 }
             }
             clDlt.setOnClickListener {
-                showToast("Your product is deleted")
+                deleteProduct()
             }
             clOutOfStock.setOnClickListener {
-                showToast("Your Product has been updated to out of stock")
+                outOfStockProduct()
             }
         }
 
     }
 
+
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
             R.id.nav_product -> {
-                navigator.startActivity(AddProductActivity::class.java,true)
+                navigator.startActivity(AddProductActivity::class.java, true)
 
                 Toast.makeText(this, "Add Product", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_store -> {
-                navigator.startActivity(AddStoreActivity::class.java,true)
+                navigator.startActivity(AddStoreActivity::class.java, true)
                 Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_change_language -> {
@@ -198,5 +202,30 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),ProductA
         return true
     }
 
+    private fun updatePrice(etChangePrice: String) {
+        showToast("Your price has been updated to ${etChangePrice.trim()}")
+
+    }
+
+    private fun renameProduct(etRename: String) {
+        showToast("Your Product name has been changed to ${etRename.trim()}")
+
+    }
+
+    private fun outOfStockProduct() {
+        showToast("Your Product has been updated to out of stock")
+    }
+
+    private fun deleteProduct() {
+        showToast("Your product is deleted")
+    }
+
+    private fun getAllShops() {
+        intializeRvShop()
+    }
+
+    private fun getAllProduct() {
+        intializeRvAllItems()
+    }
 
 }

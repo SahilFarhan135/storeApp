@@ -25,4 +25,9 @@
     <string name="product_description">Product Description</string>
     <string name="selling_price">Selling Price</string>
     <string name="add_photos">Add Photos</string>
+    <string name="message_permission_required">Permission Required</string>
+    <string name="please_add_product_to_your_store">Please Add Product to your Store</string>
+    <string name="add_your_store">Add Your Store</string>
+    <string name="add_picture_of_your_store">Add Picture Of Your Store</string>
+    <string name="unit">Unit</string>
 </resources>
