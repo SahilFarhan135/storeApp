@@ -6,8 +6,8 @@ import com.ys.storeapp.injection.scope.ViewModelScope
 import com.ys.storeapp.ui.account.AccountViewModel
 import com.ys.storeapp.ui.add_store.AddStoreViewModel
 import com.ys.storeapp.ui.addproduct.AddProductViewModel
+import com.ys.storeapp.ui.delivery_current.MyOrderViewModel
 import com.ys.storeapp.ui.home.HomeViewModel
-import com.ys.storeapp.ui.login.LoginActivity
 import com.ys.storeapp.ui.login.LoginViewModel
 import com.ys.storeapp.ui.product.ProductViewModel
 import com.ys.storeapp.ui.signup.SignupViewModel
@@ -62,14 +62,15 @@ abstract class ViewModelModule {
     abstract fun bindAddStoreViewModel(viewModel: AddStoreViewModel): ViewModel
 
     @Binds
-
     @IntoMap
     @ViewModelScope(AddProductViewModel::class)
     abstract fun bindAddProductViewModel(viewModel: AddProductViewModel): ViewModel
 
 
-
-
+    @Binds
+    @IntoMap
+    @ViewModelScope(MyOrderViewModel::class)
+    abstract fun bindCurrentOrderViewModel(viewModel: MyOrderViewModel): ViewModel
 
 
 }

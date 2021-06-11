@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.ys.storeapp">
 
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
         tools:ignore="ScopedStorage" />
-    <uses-permission android:name="android.permission.INTERNET"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:name=".BaseApplication"
         android:allowBackup="true"
@@ -19,19 +21,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.home.HomeActivity"/>
+        <activity android:name=".ui.delivery_current.MyOrderActivity" />
+        <activity android:name=".ui.home.HomeActivity" />
         <activity android:name=".ui.splash.SplashActitvity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.login.LoginActivity"/>
-        <activity android:name=".ui.signup.SignupActivity"/>
-        <activity android:name=".ui.account.AccountActivity"/>
-        <activity android:name=".ui.product.ProductsActivity"/>
-        <activity android:name=".ui.add_store.AddStoreActivity"/>
-        <activity android:name=".ui.addproduct.AddProductActivity"/>
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.signup.SignupActivity" />
+        <activity android:name=".ui.account.AccountActivity" />
+        <activity android:name=".ui.product.ProductsActivity" />
+        <activity android:name=".ui.add_store.AddStoreActivity" />
+        <activity android:name=".ui.addproduct.AddProductActivity" />
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

@@ -3,19 +3,24 @@ package com.ys.storeapp.ui.home
 import android.app.Dialog
 import android.os.Bundle
 import android.view.*
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout.SimpleDrawerListener
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.navigation.NavigationView
 import com.ys.storeapp.R
 import com.ys.storeapp.base.BaseActivity
 import com.ys.storeapp.databinding.ActivityMainBinding
+import com.ys.storeapp.databinding.DialogAppLangBinding
 import com.ys.storeapp.databinding.DilaogMenuBinding
 import com.ys.storeapp.injection.component.AppComponent
 import com.ys.storeapp.ui.account.AccountActivity
 import com.ys.storeapp.ui.add_store.AddStoreActivity
 import com.ys.storeapp.ui.addproduct.AddProductActivity
+import com.ys.storeapp.ui.delivery_current.MyOrderActivity
 import com.ys.storeapp.ui.home.adpaters.CategoryAdapter
 import com.ys.storeapp.ui.home.adpaters.ProductApadter
 import com.ys.storeapp.ui.home.model.CategoryModel
@@ -23,7 +28,7 @@ import com.ys.storeapp.ui.home.model.ProductItem
 
 
 class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
-    ProductApadter.OnProductMenuClick, NavigationView.OnNavigationItemSelectedListener {
+        ProductApadter.OnProductMenuClick, NavigationView.OnNavigationItemSelectedListener {
 
 
     private lateinit var categoryList: ArrayList<CategoryModel>
@@ -79,7 +84,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
         categoryList.add(CategoryModel(R.drawable.ic_shop, "Malik\n Store"))
         categoryList.add(CategoryModel(R.drawable.ic_shop, "Mk\n Clothing"))
         val adapter =
-            CategoryAdapter(categoryList, this)
+                CategoryAdapter(categoryList, this)
         binding.activityMainDr.rvMyStore.setAdapter(adapter)
         binding.activityMainDr.rvMyStore.setLayoutManager(GridLayoutManager(this, 3))
     }
@@ -121,8 +126,8 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
         val binding: DilaogMenuBinding = DilaogMenuBinding.inflate(LayoutInflater.from(this))
         dialog.setContentView(binding.getRoot())
         dialog.window!!.setLayout(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.WRAP_CONTENT
         )
         dialog.setCancelable(true)
         dialog.show()
@@ -179,6 +184,9 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
 
     override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
         when (menuItem.itemId) {
+            R.id.nav_current_order->{
+                navigator.startActivity(MyOrderActivity::class.java, true)
+            }
             R.id.nav_product -> {
                 navigator.startActivity(AddProductActivity::class.java, true)
 
@@ -188,14 +196,21 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
                 navigator.startActivity(AddStoreActivity::class.java, true)
                 Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
             }
+            R.id.nav_store_info -> {
+                navigator.startActivity(AccountActivity::class.java, true)
+                Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
+            }
             R.id.nav_change_language -> {
-                Toast.makeText(this, "Change Language ", Toast.LENGTH_SHORT).show()
+                showChooseLangDialog()
             }
             R.id.nav_change_password -> {
                 Toast.makeText(this, "Change Password", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_privacy_policy -> {
                 Toast.makeText(this, "Privacy Policy", Toast.LENGTH_SHORT).show()
+            }
+            R.id.nav_logout -> {
+                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show()
             }
         }
         binding.drawerLayout.closeDrawer(GravityCompat.START)
@@ -227,5 +242,42 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
     private fun getAllProduct() {
         intializeRvAllItems()
     }
+
+    private fun showChooseLangDialog() {
+        val binding = DialogAppLangBinding.inflate(LayoutInflater.from(this))
+        val arrayAdapter = ArrayAdapter(
+            this, R.layout.rv_lang,resources.getStringArray(R.array.arr_lang)
+        )
+        binding.spinnerLang.adapter = arrayAdapter
+        binding.spinnerLang.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                when (position) {
+                    0 -> prefsUtil.lang = "en"
+                    1 -> prefsUtil.lang = "hi"
+                    2 -> prefsUtil.lang = "ur"
+                }
+            }
+
+            override fun onNothingSelected(p0: AdapterView<*>?) {
+            }
+
+        }
+
+        MaterialAlertDialogBuilder(this)
+            .setTitle("Choose Language")
+            .setCancelable(false)
+            .setView(binding.root)
+            .setPositiveButton("Continue") { dialogInterface, _ ->
+                dialogInterface.dismiss()
+                recreate()
+            }
+            .show()
+    }
+
 
 }

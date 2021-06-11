@@ -85,17 +85,16 @@
                 android:drawablePadding="10dp"
                 android:fontFamily="@font/convergence"
                 android:padding="5dp"
-                android:text="Please Provide Your Store Info"
+                android:text="@string/please_provide_your_store_info"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="15sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:drawableEndCompat="@drawable/ic_shop"
                 app:layout_constraintBottom_toTopOf="@id/cv_login"
                 app:layout_constraintEnd_toEndOf="@id/cv_login"
                 app:layout_constraintStart_toStartOf="@id/cv_login"
-                app:layout_constraintTop_toBottomOf="@id/cl_toolbar"
-                tools:ignore="HardcodedText" />
+                app:layout_constraintTop_toBottomOf="@id/cl_toolbar" />
 
 
             <androidx.cardview.widget.CardView

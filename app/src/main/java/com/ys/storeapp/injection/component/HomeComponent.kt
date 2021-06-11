@@ -4,6 +4,7 @@ import com.ys.storeapp.injection.scope.ActivityScope
 import com.ys.storeapp.ui.account.AccountActivity
 import com.ys.storeapp.ui.add_store.AddStoreActivity
 import com.ys.storeapp.ui.addproduct.AddProductActivity
+import com.ys.storeapp.ui.delivery_current.MyOrderActivity
 import com.ys.storeapp.ui.home.HomeActivity
 import com.ys.storeapp.ui.login.LoginActivity
 import com.ys.storeapp.ui.product.ProductsActivity
@@ -27,4 +28,5 @@ interface HomeComponent {
     fun inject(activity: ProductsActivity)
     fun inject(activity: AddStoreActivity)
     fun inject(activity: AddProductActivity)
+    fun inject(activity: MyOrderActivity)
 }

@@ -38,13 +38,12 @@
             android:drawablePadding="10dp"
             android:fontFamily="@font/convergence"
             app:layout_constraintBottom_toTopOf="@id/cv_login"
-            android:text="WELCOME TO YOUR STORE"
-            android:drawableEnd="@drawable/ic_shop"
+            android:text="@string/welcome_to_your_store"
             android:textColor="@color/white"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText" />
+            app:drawableEndCompat="@drawable/ic_shop" />
 
 
         <androidx.cardview.widget.CardView
@@ -164,7 +163,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:buttonTint="@color/color_primary"
-                            android:checked="true"
+                            android:checked="false"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />

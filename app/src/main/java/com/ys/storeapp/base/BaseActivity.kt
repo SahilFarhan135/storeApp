@@ -1,6 +1,9 @@
 package com.ys.storeapp.base
 
+import android.content.res.Configuration
+import android.content.res.Resources
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
@@ -10,7 +13,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.ys.storeapp.BaseApplication
 import com.ys.storeapp.exceptions.UnauthorizedException
 import com.ys.storeapp.injection.component.AppComponent
+import com.ys.storeapp.util.PrefsUtil
 import com.ys.storeapp.util.UiUtil
+import java.util.*
 import javax.inject.Inject
 
 abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompatActivity() {
@@ -20,6 +25,14 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
     lateinit var navigator: Navigator
     protected lateinit var uiUtil: UiUtil
 
+    @Inject
+    lateinit var prefsUtil: PrefsUtil
+
+    private val mCurrentLocale: Locale? = null
+    public var dLocale: Locale? = null
+    var res: Resources? = null
+    var config: Configuration? = null
+    var dm: DisplayMetrics? = null
 
     @Inject
     lateinit var viewModelFactory: ViewModelProvider.Factory
@@ -29,6 +42,7 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
             (application as BaseApplication).appComponent
         injectActivity(appComponent)
         super.onCreate(savedInstanceState)
+        if (prefsUtil.lang.isBlank()) setAppLocale("en") else setAppLocale(prefsUtil.lang)
         bindContentView(layoutId())
         navigator = Navigator(this)
         uiUtil = UiUtil(this)
@@ -86,6 +100,14 @@ abstract class BaseActivity<B : ViewDataBinding, VM : BaseViewModel> : AppCompat
     }
 
     fun getLayoutBinding() = binding
+
+    protected fun setAppLocale(lang: String) {
+        res = resources
+        dm = res?.displayMetrics
+        config = res?.configuration
+        config?.setLocale(Locale(lang))
+        res?.updateConfiguration(config, dm)
+    }
 
 
 }

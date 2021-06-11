@@ -1,6 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Store App</string>
-
 
     <string-array name="arr_lang" tools:ignore="InconsistentArrays">
         <item>English</item>
@@ -37,6 +37,7 @@
     <string name="add_your_store">Add Your Store</string>
     <string name="add_picture_of_your_store">Add Picture Of Your Store</string>
     <string name="unit">Unit</string>
+    <string name="my_orders">My Orders</string>
     <string name="all">All</string>
     <string name="pending">Pending</string>
     <string name="completed">Completed</string>
@@ -44,7 +45,7 @@
     <string name="on_delivery">On-Delivery</string>
     <string name="delivery_status">Delivery Status : </string>
     <string name="store_info">Store Info</string>
-    <string name="my_orders">My Orders</string>
+
     <string name="add_store">Add Store</string>
     <string name="add_product">Add Product</string>
     <string name="my_store_info">My Store Info</string>

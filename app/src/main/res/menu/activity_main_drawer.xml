@@ -7,28 +7,45 @@
 
 
         <item
+            android:id="@+id/nav_current_order"
+            android:title="@string/my_orders"
+            android:visible="true" />
+
+        <item
             android:id="@+id/nav_store"
-            android:title="Add Store"
+            android:title="@string/add_store"
             android:visible="true" />
 
         <item
             android:id="@+id/nav_product"
-            android:title="Add Product"
+            android:title="@string/add_product"
             android:visible="true" />
         <item
-            android:id="@+id/nav_privacy_policy"
-            android:title="Privacy Policy"
-            android:visible="true" />
-
-        <item
-            android:id="@+id/nav_change_password"
-            android:title="Change Password"
+            android:id="@+id/nav_store_info"
+            android:title="@string/my_store_info"
             android:visible="true" />
 
         <item
             android:id="@+id/nav_change_language"
-            android:title="Change Language"
+            android:title="@string/change_language"
             android:visible="true" />
+
+        <item
+            android:id="@+id/nav_change_password"
+            android:title="@string/change_password"
+            android:visible="true" />
+
+        <item
+            android:id="@+id/nav_privacy_policy"
+            android:title="@string/privacy_policy"
+            android:visible="true" />
+
+
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/logout"
+            android:visible="true" />
+
 
     </group>
 

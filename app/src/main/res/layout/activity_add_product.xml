@@ -38,7 +38,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="5dp"
                 app:layout_constraintBottom_toTopOf="@id/cv_add_product"
@@ -64,7 +64,8 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/convergence"
                     android:gravity="center"
-                    android:text="Add Your Product"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/add_your_product"
                     android:textAlignment="center"
                     android:textColor="@color/white"
                     android:textSize="18sp"
@@ -72,8 +73,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/img_bt_back"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -104,7 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="14dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="40dp"
                 android:layout_marginEnd="14dp"
                 android:layout_marginBottom="30dp"
                 app:cardBackgroundColor="#FFFFFF"
@@ -333,7 +333,6 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="5dp"
-                                android:background="@drawable/ic_camera"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/img_pic_2"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -348,8 +347,6 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="5dp"
-
-                                android:background="@drawable/ic_camera"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/img_pic_3"
                                 app:layout_constraintStart_toEndOf="@id/img_pic_1"
@@ -364,7 +361,6 @@
                                 android:layout_marginTop="5dp"
                                 android:layout_marginEnd="10dp"
                                 android:layout_marginBottom="5dp"
-                                android:background="@drawable/ic_camera"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toEndOf="@id/img_pic_2"

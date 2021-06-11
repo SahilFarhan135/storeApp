@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <resources xmlns:tools="http://schemas.android.com/tools">
+        <string name="app_name">Store App</string>
+
+
+        <string-array name="arr_lang" tools:ignore="InconsistentArrays">
+            <item>अंग्रेज़ी</item>
+            <item>हिंदी</item>
+            <item>उर्दू</item>
+        </string-array>
+        <string name="rename">नाम बदलें</string>
+        <string name="change_price">मूल्य बदलें</string>
+        <string name="make_out_stock">स्टॉक ख़त्म</string>
+        <string name="delete_product">चीज़ें हटाएं</string>
+        <string name="rename_your_product">अपने आइटम का नाम बदलें</string>
+        <string name="mobile_no">मोबाइल नंबर</string>
+        <string name="password">पासवर्ड</string>
+        <string name="remember_me">मुझे याद रखें</string>
+        <string name="forgot_password">पासवर्ड भूल गए</string>
+        <string name="login_to_your_account">अपने अकाउंट में लॉग इन करें</string>
+        <string name="confirm_password">पासवर्ड की पुष्टि कीजिये</string>
+        <string name="need_an_account">एक खाता चाहिए ?</string>
+        <string name="signup">साइन अप करें</string>
+        <string name="signin">साइन इन करें</string>
+        <string name="store_name">दुकान नाम</string>
+        <string name="store_category">दुकान श्रेणी</string>
+        <string name="enter_otp">ओटीपी दर्ज करें</string>
+        <string name="please_enter_otp_sent_to_your_mobile">कृपया आपके मोबाइल पर भेजा गया ओटीपी दर्ज करें</string>
+        <string name="resend_otp">ओटीपी भेजें</string>
+        <string name="have_an_account">पहले से खाता है? </string>
+        <string name="product_name">प्रोडक्ट का नाम</string>
+        <string name="product_type">प्रोडक्ट प्रकार</string>
+        <string name="product_description">प्रोडक्ट विवरण</string>
+        <string name="selling_price">विक्रय मूल्य</string>
+        <string name="add_photos">तस्वीरें जोडो</string>
+        <string name="message_permission_required">अनुमति आवश्यक</string>
+        <string name="please_add_product_to_your_store">कृपया अपने दुकान में उत्पाद जोड़ें</string>
+        <string name="add_your_store">अपना दुकान जोड़ें</string>
+        <string name="add_picture_of_your_store">अपने दुकान की तस्वीर जोड़ें</string>
+        <string name="unit">इकाई</string>
+        <string name="my_orders">मेरे आर्डर</string>
+        <string name="all">सब</string>
+        <string name="pending">अपूर्ण</string>
+        <string name="completed">पूर्ण</string>
+        <string name="payment_status">भुगतान की स्थिति :</string>
+        <string name="on_delivery">डिलीवरी पर</string>
+        <string name="delivery_status">डिलीवरी की स्थिति :</string>
+        <string name="store_info">दुकान की जानकारी</string>
+
+    <string name="add_store">दुकान जोड़ें</string>
+    <string name="add_product">उत्पाद जोड़ें</string>
+    <string name="my_store_info">मेरी दुकान की जानकारी</string>
+    <string name="change_language">भाषा बदलें</string>
+    <string name="change_password">पासवर्ड बदलें</string>
+    <string name="privacy_policy">प्राइवेसी पॉलिसी</string>
+    <string name="logout">लॉग आउट</string>
+    <string name="share_your_store_qr_code_or_msid">अपना दुकान का QR कोड या MSID साझा करें</string>
+    <string name="add_your_product">अपना प्रोडक्ट जोड़ें</string>
+    <string name="please_provide_your_store_info">कृपया अपने दुकान की जानकारी प्रदान करें</string>
+    <string name="all_order">सभी आदेश</string>
+    <string name="welcome_to_your_store">आपके दुकान में आपका स्वागत है</string>
+    <string name="search_item">आइटम खोजें</string>
+    <string name="my_stores">मेरे दुकान</string>
+    <string name="all_products">सभी प्रोडक्ट</string>
+    <string name="create_your_own_store">अपना खुद का दुकान बनाएं</string>
+    <string name="create_an_account">खाता बनाएं</string>
+    <string name="open_gallery">गैलरी खोलें</string>
+    <string name="open_camera">कैमरा खोलो</string>
+    <string name="open_files">फाइल खोले</string>
+</resources>

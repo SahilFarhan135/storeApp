@@ -3,13 +3,14 @@ package com.ys.storeapp.ui.account
 import android.os.Bundle
 import com.ys.storeapp.R
 import com.ys.storeapp.base.BaseActivity
+import com.ys.storeapp.databinding.ActivityAccountBinding
 import com.ys.storeapp.databinding.ActivityLoginBinding
 import com.ys.storeapp.databinding.ActivitySplashBinding
 import com.ys.storeapp.injection.component.AppComponent
 
-class AccountActivity: BaseActivity<ActivityLoginBinding, AccountViewModel>() {
+class AccountActivity: BaseActivity<ActivityAccountBinding, AccountViewModel>() {
 
-    override fun layoutId(): Int = R.layout.activity_login
+    override fun layoutId(): Int = R.layout.activity_account
     override fun getViewModelClass(): Class<AccountViewModel> = AccountViewModel::class.java
     override fun addObservers() {}
 

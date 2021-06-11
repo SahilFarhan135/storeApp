@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ys.storeapp.databinding.RvProductBinding
+import com.ys.storeapp.ui.delivery_current.OrderItem
 import com.ys.storeapp.ui.home.model.CategoryModel
 import com.ys.storeapp.ui.home.model.ProductItem
 
@@ -22,7 +23,7 @@ class ProductApadter : RecyclerView.Adapter<ProductApadter.ProductViewHolder>() 
         this.onProductMenuClick = onProductMenuClick
     }
 
-    fun submitList(productsItemList: List<ProductItem>) {
+    fun submitList(productsItemList: ArrayList<ProductItem>) {
         items.clear()
         items.addAll(productsItemList)
         notifyDataSetChanged()
