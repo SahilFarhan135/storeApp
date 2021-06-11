@@ -50,7 +50,7 @@
                         android:layout_width="30dp"
                         android:layout_height="30dp"
                         android:layout_margin="5dp"
-                        android:background="@drawable/ic_user"
+                        android:background="@drawable/ic_checked"
                         android:padding="3dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

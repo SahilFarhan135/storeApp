@@ -3,6 +3,7 @@ package com.ys.storeapp.ui.delivery_current
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ys.storeapp.R
 import com.ys.storeapp.databinding.RvCurrentOrderBinding
 import com.ys.storeapp.ui.home.model.ProductItem
 
@@ -22,6 +23,9 @@ class MyOrderApadter : RecyclerView.Adapter<MyOrderApadter.MyOrderViewHolder>() 
 
         fun attachItem(orderItem: OrderItem) {
             with(binding) {
+                if(orderItem.deliveryTag.equals("p")){
+                    imgStatusCheck.setBackground(itemView.resources.getDrawable(R.drawable.ic_checked_red));
+                }
                 tvDeliveryStatus.text=orderItem.deliveryStatus.toString()
                 tvOrderId.text=orderItem.orderId.toString()
                 tvPaymentStatus.text=orderItem.paymentStatus.toString()
