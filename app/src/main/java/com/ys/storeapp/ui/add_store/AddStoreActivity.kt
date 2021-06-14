@@ -38,11 +38,8 @@ class AddStoreActivity : BaseActivity<ActivityAddStoreBinding, AddStoreViewModel
     lateinit var bottomSheet: BottomSheetDialog
 
     companion object {
-
-
         private const val REQUEST_OPEN_FILES = 1888
         private const val REQUEST_OPEN_GALLERY = 1889
-
     }
 
 

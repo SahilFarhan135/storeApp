@@ -66,4 +66,7 @@
     <string name="open_gallery">Open Gallery</string>
     <string name="open_camera">Open Camera</string>
     <string name="open_files">Open Files</string>
+    <string name="qr_code">QR Code</string>
+    <string name="total_order">Total \nOrder</string>
+    <string name="total_earning">Total Earning</string>
 </resources>
