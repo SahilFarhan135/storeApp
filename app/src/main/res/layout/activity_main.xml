@@ -29,6 +29,8 @@
                 android:layout_gravity="start"
                 android:fitsSystemWindows="true"
                 android:elevation="16dp"
+                app:itemTextAppearance="@font/convergence"
+                app:itemTextColor="@color/color_primary"
                 android:background="@color/white"
                 app:headerLayout="@layout/nav_header_main"
                 app:menu="@menu/activity_main_drawer" />

@@ -68,4 +68,5 @@
     <string name="qr_code">QR Code</string>
     <string name="total_order">Total \nOrder</string>
     <string name="total_earning">Total \nEarning</string>
+    <string name="upload_picture">Upload Picture</string>
 </resources>
