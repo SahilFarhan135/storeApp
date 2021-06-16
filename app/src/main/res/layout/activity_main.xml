@@ -29,7 +29,7 @@
                 android:layout_gravity="start"
                 android:fitsSystemWindows="true"
                 android:elevation="16dp"
-                app:itemTextAppearance="@font/convergence"
+                app:itemTextAppearance="@style/menu_text_style"
                 app:itemTextColor="@color/color_primary"
                 android:background="@color/white"
                 app:headerLayout="@layout/nav_header_main"

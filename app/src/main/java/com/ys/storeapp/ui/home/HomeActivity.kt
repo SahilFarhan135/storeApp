@@ -255,7 +255,6 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
                 when (position) {
                     0 -> prefsUtil.lang = "en"
                     1 -> prefsUtil.lang = "hi"
-                    2 -> prefsUtil.lang = "ur"
                 }
             }
 
@@ -265,7 +264,7 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
         }
 
         MaterialAlertDialogBuilder(this)
-            .setTitle("Choose Language")
+            .setTitle(getString(R.string.choose_lang))
             .setCancelable(false)
             .setView(binding.root)
             .setPositiveButton("Continue") { dialogInterface, _ ->

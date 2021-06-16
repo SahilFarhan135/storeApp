@@ -6,7 +6,6 @@
         <string-array name="arr_lang" tools:ignore="InconsistentArrays">
             <item>अंग्रेज़ी</item>
             <item>हिंदी</item>
-            <item>उर्दू</item>
         </string-array>
         <string name="rename">नाम बदलें</string>
         <string name="change_price">मूल्य बदलें</string>
@@ -71,4 +70,6 @@
     <string name="total_order">Total \nOrder</string>
     <string name="total_earning">Total Earning</string>
     <string name="upload_picture">Upload Picture</string>
+    <string name="_continue_">Continue</string>
+    <string name="choose_lang">Choose Language</string>
 </resources>

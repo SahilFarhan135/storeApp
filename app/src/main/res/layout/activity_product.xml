@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF"
-        tools:context=".ui.account.AccountActivity">
+        tools:context=".ui.product.ProductsActivity">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_main"
@@ -18,19 +18,20 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cl_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toTopOf="@id/CL_main_view"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
+                <Button
                     android:id="@+id/bt_back"
                     android:layout_width="35dp"
-                    android:layout_height="30dp"
+                    android:layout_height="35dp"
                     android:layout_margin="10dp"
                     android:background="@drawable/ic_back"
-                    android:backgroundTint="#252D75"
+                    app:backgroundTint="#0D2298"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -39,11 +40,10 @@
                     android:id="@+id/tv_store_name"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
+                    android:layout_marginTop="2dp"
                     android:ellipsize="end"
-                    android:gravity="center"
-                    android:maxLines="1"
                     android:fontFamily="@font/convergence"
+                    android:maxLines="1"
                     android:text="Sahil Footwear"
                     android:textAlignment="center"
                     android:textColor="#81000000"
@@ -74,8 +74,8 @@
 
                 <ImageView
                     android:id="@+id/img_profile"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
                     android:layout_margin="20dp"
                     android:background="@drawable/ic_user"
                     app:layout_constraintBottom_toBottomOf="parent"

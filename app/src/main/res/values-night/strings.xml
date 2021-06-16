@@ -20,4 +20,5 @@
     <string name="open_camera">Open Camera</string>
     <string name="open_files">Open Files</string>
     <string name="upload_picture">Upload Picture</string>
+    <string name="choose_lang">Choose Language</string>
 </resources>

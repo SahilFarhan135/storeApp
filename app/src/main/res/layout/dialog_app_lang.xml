@@ -10,15 +10,14 @@
     <androidx.appcompat.widget.AppCompatSpinner
         android:id="@+id/spinner_lang"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:minWidth="24dp"
         android:layout_margin="15sp"
-        android:padding="10sp"
+        android:padding="8sp"
         android:background="@drawable/spinner_rounded_corner"
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
+        app:layout_constraintTop_toTopOf="parent" />
 
   </androidx.constraintlayout.widget.ConstraintLayout>
   <data>

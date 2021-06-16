@@ -64,7 +64,7 @@
                     android:text="Add Store "
                     android:textAlignment="center"
                     android:textColor="@color/white"
-                    android:textSize="18sp"
+                    android:textSize="19sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -88,7 +88,7 @@
                 android:text="@string/please_provide_your_store_info"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="14sp"
+                android:textSize="17sp"
                 android:textStyle="bold"
                 app:drawableEndCompat="@drawable/ic_shop"
                 app:layout_constraintBottom_toTopOf="@id/cv_login"
@@ -127,7 +127,7 @@
                         android:text="@string/add_your_store"
                         android:textAlignment="center"
                         android:textColor="#071BD1"
-                        android:textSize="18sp"
+                        android:textSize="19sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -176,7 +176,7 @@
                             <com.google.android.material.textfield.TextInputEditText
                                 android:id="@+id/et_store_name"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="55dp"
                                 android:fontFamily="@font/convergence"
                                 android:inputType="text"
                                 android:padding="12sp"
@@ -201,7 +201,7 @@
                             <AutoCompleteTextView
                                 android:id="@+id/actv_category"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_height="55dp"
                                 android:inputType="none"
                                 tools:ignore="LabelFor" />
                         </com.google.android.material.textfield.TextInputLayout>
@@ -219,7 +219,7 @@
                                 android:fontFamily="@font/convergence"
                                 android:text="@string/add_picture_of_your_store"
                                 android:textColor="@color/color_primary"
-                                android:textSize="15sp"
+                                android:textSize="17sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toStartOf="@id/img_upload_pic"
                                 app:layout_constraintStart_toStartOf="parent"
