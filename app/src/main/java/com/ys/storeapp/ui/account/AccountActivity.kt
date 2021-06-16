@@ -49,6 +49,17 @@ class AccountActivity : BaseActivity<ActivityAccountBinding, AccountViewModel>()
         clickListner()
     }
 
+    private fun initui() {
+        val qrgEncoder = QRGEncoder("MK4945393", null, QRGContents.Type.TEXT, 2500)
+        try {
+            bitmap = qrgEncoder.bitmap
+            binding.imgQrcode.setImageBitmap(bitmap)
+
+        } catch (e: Exception) {
+            Log.e("Tag", e.toString())
+        }
+    }
+
     private fun clickListner() {
         binding.btBack.setOnClickListener {
             onBackPressed()
@@ -62,19 +73,6 @@ class AccountActivity : BaseActivity<ActivityAccountBinding, AccountViewModel>()
         binding.tvDownload.setOnClickListener {
             downloadQrCode(bitmap)
         }
-    }
-
-    private fun initui() {
-        val qrgEncoder = QRGEncoder("MK4945393", null, QRGContents.Type.TEXT, 2500)
-        try {
-            bitmap = qrgEncoder.bitmap
-            binding.imgQrcode.setImageBitmap(bitmap)
-
-        } catch (e: Exception) {
-
-            Log.e("Tag", e.toString())
-        }
-
     }
 
 

@@ -189,16 +189,12 @@ class HomeActivity : BaseActivity<ActivityMainBinding, HomeViewModel>(),
             }
             R.id.nav_product -> {
                 navigator.startActivity(AddProductActivity::class.java, true)
-
-                Toast.makeText(this, "Add Product", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_store -> {
                 navigator.startActivity(AddStoreActivity::class.java, true)
-                Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_store_info -> {
                 navigator.startActivity(AccountActivity::class.java, true)
-                Toast.makeText(this, "Add Store Store", Toast.LENGTH_SHORT).show()
             }
             R.id.nav_change_language -> {
                 showChooseLangDialog()
